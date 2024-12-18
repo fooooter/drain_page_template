@@ -8,3 +8,4 @@ crate-type = ["dylib"]
 
 [dependencies]
 drain_common = { git = "https://github.com/fooooter/drain_common" }
+drain_macros = { git = "https://github.com/fooooter/drain_macros" }

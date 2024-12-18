@@ -1,8 +1,10 @@
 use std::collections::HashMap;
 use drain_common::RequestData;
+use drain_macros::*;
 
 #[export_name = "not_found"]
-pub fn not_found(request_data: RequestData, mut response_headers: &mut HashMap<String, String>) -> Option<Vec<u8>> {
+#[drain_page]
+pub fn not_found() -> Option<Vec<u8>> {
     let content: Vec<u8> = Vec::from(r#"
     <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +19,7 @@ pub fn not_found(request_data: RequestData, mut response_headers: &mut HashMap<S
     </html>"#
     );
 
-    response_headers.insert(String::from("Content-Type"), String::from("text/html; charset=utf-8"));
+    header!("Content-Type", "text/html; charset=utf-8");
 
     Some(content)
 }

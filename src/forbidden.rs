@@ -1,8 +1,10 @@
 use std::collections::HashMap;
 use drain_common::RequestData;
+use drain_macros::*;
 
 #[export_name = "forbidden"]
-pub fn forbidden(request_data: RequestData, mut response_headers: &mut HashMap<String, String>) -> Option<Vec<u8>> {
+#[drain_page]
+pub fn forbidden() -> Option<Vec<u8>> {
     let content: Vec<u8> = Vec::from(r#"
     <!DOCTYPE html>
         <head>
@@ -16,7 +18,7 @@ pub fn forbidden(request_data: RequestData, mut response_headers: &mut HashMap<S
     </html>"#
     );
 
-    response_headers.insert(String::from("Content-Type"), String::from("text/html; charset=utf-8"));
+    header!("Content-Type", "text/html; charset=utf-8");
 
     Some(content)
 }
