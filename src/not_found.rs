@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use drain_common::RequestData;
+use drain_common::cookies::SetCookie;
 use drain_macros::*;
 
 #[export_name = "not_found"]
