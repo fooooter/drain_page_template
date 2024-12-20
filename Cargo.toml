@@ -7,5 +7,6 @@ edition = "2021"
 crate-type = ["dylib"]
 
 [dependencies]
+tokio = { version = "1.41.1", features = ["full"] }
 drain_common = { git = "https://github.com/fooooter/drain_common" }
 drain_macros = { git = "https://github.com/fooooter/drain_macros" }

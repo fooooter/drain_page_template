@@ -1,11 +1,10 @@
 use std::collections::HashMap;
-use drain_common::RequestData::{self, *};
-use drain_common::cookies::SetCookie;
+use drain_common::RequestData::*;
 use drain_macros::*;
 
 #[export_name = "index"]
 #[drain_page]
-pub fn index() -> Option<Vec<u8>> {
+pub fn index() {
     let content: Vec<u8> = Vec::from(format!(r#"
     <!DOCTYPE html>
         <head>

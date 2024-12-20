@@ -1,11 +1,9 @@
 use std::collections::HashMap;
-use drain_common::RequestData;
-use drain_common::cookies::SetCookie;
 use drain_macros::*;
 
 #[export_name = "forbidden"]
 #[drain_page]
-pub fn forbidden() -> Option<Vec<u8>> {
+pub fn forbidden() {
     let content: Vec<u8> = Vec::from(r#"
     <!DOCTYPE html>
         <head>
