@@ -17,12 +17,12 @@ pub fn index() -> Option<Vec<u8>> {
             Hello, world! {} request was sent.
         </body>
     </html>"#, match request_data {
-        Get {..} => "GET",
-        Post {..} => "POST",
-        Head {..} => "HEAD"
+        Get(_) => "GET",
+        Post(_) => "POST",
+        Head => "HEAD"
     }));
 
-    header!("Content-Type", "text/html; charset=utf-8");
+    set_header!("Content-Type", "text/html; charset=utf-8");
 
     Some(content)
 }

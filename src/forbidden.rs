@@ -19,7 +19,7 @@ pub fn forbidden() -> Option<Vec<u8>> {
     </html>"#
     );
 
-    header!("Content-Type", "text/html; charset=utf-8");
+    set_header!("Content-Type", "text/html; charset=utf-8");
 
     Some(content)
 }
