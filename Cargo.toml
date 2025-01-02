@@ -8,5 +8,5 @@ crate-type = ["dylib"]
 
 [dependencies]
 tokio = { version = "1.41.1", features = ["full"] }
-drain_common = { git = "https://github.com/fooooter/drain_common" }
-drain_macros = { git = "https://github.com/fooooter/drain_macros" }
+drain_common = "0.4.0"
+drain_macros = "0.4.0"
