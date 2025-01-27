@@ -1,8 +1,6 @@
-use std::collections::HashMap;
 use drain_macros::*;
 
-#[export_name = "not_found"]
-#[drain_page]
+#[drain_endpoint("not_found")]
 pub fn not_found() {
     let content: Vec<u8> = Vec::from(r#"
     <!DOCTYPE html>

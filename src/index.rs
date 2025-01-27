@@ -1,9 +1,7 @@
-use std::collections::HashMap;
 use drain_common::RequestData::*;
 use drain_macros::*;
 
-#[export_name = "index"]
-#[drain_page]
+#[drain_endpoint("index")]
 pub fn index() {
     let content: Vec<u8> = Vec::from(format!(r#"
     <!DOCTYPE html>
