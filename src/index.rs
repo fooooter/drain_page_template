@@ -1,5 +1,5 @@
 use drain_common::RequestData::*;
-use drain_macros::*;
+use drain_macros::{drain_endpoint, set_header};
 
 #[drain_endpoint("index")]
 pub fn index() {
@@ -15,8 +15,8 @@ pub fn index() {
         </body>
     </html>"#, match request_data {
         Get(_) => "GET",
-        Post(_) => "POST",
-        Head => "HEAD"
+        Post{..} => "POST",
+        Head(_) => "HEAD"
     }));
 
     set_header!("Content-Type", "text/html; charset=utf-8");
