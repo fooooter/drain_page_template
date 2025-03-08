@@ -9,4 +9,4 @@ crate-type = ["dylib"]
 [dependencies]
 tokio = { version = "1.41.1", features = ["full"] }
 drain_common = "0.6.7"
-drain_macros = "0.6.0"
+drain_macros = "0.6.2"

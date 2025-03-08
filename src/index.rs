@@ -22,7 +22,7 @@ pub fn index() {
             Hello, world! {} request was sent.<br>
             Counter: {}
         </body>
-    </html>"#, match request_data {
+    </html>"#, match REQUEST_DATA {
         Get(_) => "GET",
         Post{..} => "POST",
         Head(_) => "HEAD"
