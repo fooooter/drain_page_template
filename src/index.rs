@@ -25,7 +25,10 @@ pub fn index() {
     </html>"#, match REQUEST_DATA {
         Get(_) => "GET",
         Post{..} => "POST",
-        Head(_) => "HEAD"
+        Head(_) => "HEAD",
+        Put{..} => "PUT",
+        Delete{..} => "DELETE",
+        Patch{..} => "PATCH"
     }, counter));
 
     counter += 1;
